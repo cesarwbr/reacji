@@ -1,0 +1,24 @@
+{
+  "name": "reacji",
+  "version": "0.0.1",
+  "description": "Add an emoji to a HTML element",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesarwbr/reacji.git"
+  },
+  "keywords": [
+    "react",
+    "emoji",
+    "slack"
+  ],
+  "author": "Cesar William <cesarwbr@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cesarwbr/reacji/issues"
+  },
+  "homepage": "https://github.com/cesarwbr/reacji#readme"
+}
