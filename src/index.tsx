@@ -5,5 +5,5 @@ export default function Reacji() {
     display: "flex",
   };
 
-  return <div style={wrapperStyle} />;
+  return <div style={wrapperStyle}>testing</div>;
 }

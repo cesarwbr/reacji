@@ -2,9 +2,13 @@
   "name": "reacji",
   "version": "0.0.1",
   "description": "Add an emoji to a HTML element",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.esm.js",
+  "jsnext:main": "dist/index.esm.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn run clean && node build.js && tsc --emitDeclarationOnly --outDir dist",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
@@ -23,6 +27,8 @@
   "homepage": "https://github.com/cesarwbr/reacji#readme",
   "dependencies": {
     "emoji-picker-element": "^1.12.1",
+    "esbuild": "^0.14.53",
+    "rimraf": "^3.0.2",
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
@@ -32,6 +38,8 @@
   "devDependencies": {
     "@babel/preset-react": "^7.12.13",
     "@types/react": "^17.0.1",
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
