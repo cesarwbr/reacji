@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { build } = require("esbuild");
 const { dependencies } = require("./package.json");
 
@@ -12,16 +14,25 @@ const shared = {
   sourcemap: true,
 };
 
-build({
-  ...shared,
-  format: "esm",
-  outfile: "./dist/index.esm.js",
-  target: ["esnext", "node12.22.0"],
-});
+function buildESMAndCJS (watch = false) {
+  build({
+    ...shared,
+    format: "esm",
+    outfile: "./dist/index.esm.js",
+    target: ["esnext", "node12.22.0"],
+    watch,
+  });
+  
+  build({
+    ...shared,
+    format: "cjs",
+    outfile: "./dist/index.cjs.js",
+    target: ["esnext", "node12.22.0"],
+    watch,
+  });
+}
 
-build({
-  ...shared,
-  format: "cjs",
-  outfile: "./dist/index.cjs.js",
-  target: ["esnext", "node12.22.0"],
-});
+
+exports.buildESMAndCJS = buildESMAndCJS;
+
+buildESMAndCJS();
