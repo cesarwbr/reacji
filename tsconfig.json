@@ -8,5 +8,6 @@
     "jsx": "react",
     "declaration": true
   },
-  "exclude": ["dist", "./*.d.ts", "example"]
+  "exclude": ["dist", "./*.d.ts", "example"],
+  "include": ["src/image.d.ts", "src/**/*.tsx", "src/**/*.ts"]
 }

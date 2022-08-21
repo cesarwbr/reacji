@@ -1,9 +1,11 @@
 import React from "react";
+import "./index.css";
+import url from "../assets/emoji_add.png";
 
 export default function Reacji() {
-  let wrapperStyle: JSX.IntrinsicElements["div"]["style"] = {
-    display: "flex",
-  };
-
-  return <div style={wrapperStyle}>testing 11</div>;
+  return (
+    <div className="container">
+      testing 11 <img src={url} width="20" height="20" />
+    </div>
+  );
 }
