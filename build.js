@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { build } = require("esbuild");
-const { dependencies } = require("./package.json");
+const { peerDependencies } = require("./package.json");
 
 const entryFile = "src/index.tsx";
 
@@ -10,7 +10,7 @@ function buildESMAndCJS (watch = false) {
     bundle: true,
     entryPoints: [entryFile],
     // Treat all dependencies in package.json as externals to keep bundle size to a minimum
-    external: Object.keys(dependencies),
+    external: Object.keys(peerDependencies),
     logLevel: "info",
     minify: true,
     sourcemap: true,
