@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Reacji from "reacji";
 import "./app.css";
 
-function App() {
+const App: React.FC = () => {
+  const [test, setTest] = useState(false);
   return (
     <div className="App">
       <Reacji />
     </div>
   );
-}
+};
 
 export default App;

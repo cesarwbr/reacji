@@ -1,4 +1,49 @@
 .container {
   display: flex;
-  padding: 21px;
+  padding: 20px;
+  position: relative;
+}
+
+.content {
+  padding: 10px;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 8px;
+}
+
+.icon {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
+
+.menu-container {
+  position: absolute;
+  background-color: #161a22;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+  bottom: 100%;
+  top: auto;
+}
+
+.menu-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.menu-container ul > li {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu-container ul > li:hover {
+  background-color: #30363d;
 }

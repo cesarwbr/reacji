@@ -2,6 +2,7 @@
 
 const { build } = require("esbuild");
 const { peerDependencies } = require("./package.json");
+const { style } = require("@hyrious/esbuild-plugin-style");
 
 const entryFile = "src/index.tsx";
 
@@ -19,6 +20,7 @@ function buildESMAndCJS (watch = false) {
       ".png": "dataurl",
     },
     watch,
+    plugins: [style()],
   };
 
   build({

@@ -91,6 +91,11 @@
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.14.53.tgz#251b4cd6760fadb4d68a05815e6dc5e432d69cd6"
   integrity sha512-W2dAL6Bnyn4xa/QRSU3ilIK4EzD5wgYXKXJiS1HDF5vU3675qc2bvFyLwbUcdmssDveyndy7FbitrCoiV/eMLg==
 
+"@hyrious/esbuild-plugin-style@^0.3.5":
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/@hyrious/esbuild-plugin-style/-/esbuild-plugin-style-0.3.5.tgz#2101653a3c3d65064c3c36c459f76a812e2acf93"
+  integrity sha512-lDmakWp5tO9RX8wpl7+r27miXK5eOCJFoIOl1Ficz5YGAiCdIcjFt89jQwy3t7K6BBFe2EDucquB5TOh4iI+LQ==
+
 "@types/prop-types@*":
   version "15.7.3"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
