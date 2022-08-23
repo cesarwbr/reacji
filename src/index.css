@@ -10,20 +10,13 @@
   border-radius: 8px;
 }
 
-.icon {
-  position: absolute;
-  bottom: 10px;
-  left: 30px;
-}
-
 .menu-container {
-  position: absolute;
   background-color: #161a22;
   padding: 4px;
   border-radius: 4px;
   border: 1px solid #30363d;
-  bottom: 100%;
-  top: auto;
+  position: absolute;
+  bottom: 35px;
 }
 
 .menu-container ul {
@@ -31,7 +24,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 10px;
+  gap: 4px;
 }
 
 .menu-container ul > li {
@@ -46,4 +39,34 @@
 
 .menu-container ul > li:hover {
   background-color: #30363d;
+}
+
+.reacji-container {
+  display: flex;
+  position: absolute;
+  bottom: -10px;
+  top: auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.reacji-container__choose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 5px;
+  margin: 0;
+}
+
+.reacji-container__choose > li {
+  font-size: 14px;
+  padding: 1px 8px;
+  border: 1px solid #c1c1c1;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.icon {
+  padding-top: 5px;
 }
