@@ -2,29 +2,29 @@ import React, { useRef, useState } from "react";
 import "./index.css";
 import url from "../assets/emoji_add.png";
 
-const EMOJIS = ["👍", "😄", "🎉", "❤️", "🚀", "👀"];
+const EMOJIS = ["👍", "😄", "🎉", "❤️", "🚀", "👀"] as const;
+
+type Emoji = typeof EMOJIS[number];
 
 const Reacji: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [options, setOptions] = useState<Record<typeof EMOJIS[number], number>>(
-    {
-      "😄": 1,
-    }
-  );
+  const [options, setOptions] = useState<{ [key in Emoji]?: number }>({
+    "😄": 1,
+  });
   const userChoose = useRef<Set<string>>(new Set());
 
   function handleOpenMenu() {
     setShowMenu((showMenu) => !showMenu);
   }
 
-  function handleChooseEmoji(emoji: typeof EMOJIS[number]) {
+  function handleChooseEmoji(emoji: Emoji) {
     const userChosen = userChoose.current.has(emoji);
 
     setOptions((options) => {
       let count = 1;
 
-      if (options[emoji]) {
-        count = options[emoji] + (userChosen ? -1 : 1);
+      if (Number.isFinite(options[emoji])) {
+        count = options[emoji]! + (userChosen ? -1 : 1);
       }
 
       if (count) {
@@ -57,7 +57,7 @@ const Reacji: React.FC = () => {
       </div>
       <div className="reacji-container">
         <ul className="reacji-container__choose">
-          {Object.keys(options).map((key) => {
+          {(Object.keys(options) as Emoji[]).map((key) => {
             return (
               <li key={key} onClick={() => handleChooseEmoji(key)}>
                 {key} {options[key]}
@@ -69,7 +69,7 @@ const Reacji: React.FC = () => {
           {showMenu && (
             <div className="menu-container">
               <ul>
-                {emojis.map((emoji) => (
+                {EMOJIS.map((emoji) => (
                   <li key={emoji} onClick={() => handleChooseEmoji(emoji)}>
                     {emoji}
                   </li>
