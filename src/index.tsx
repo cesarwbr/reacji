@@ -2,18 +2,22 @@ import React, { useRef, useState } from "react";
 import "./index.css";
 import url from "../assets/emoji_add.png";
 
+const EMOJIS = ["👍", "😄", "🎉", "❤️", "🚀", "👀"];
+
 const Reacji: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [options, setOptions] = useState<{ [key: string]: number }>({
-    "😄": 1,
-  });
+  const [options, setOptions] = useState<Record<typeof EMOJIS[number], number>>(
+    {
+      "😄": 1,
+    }
+  );
   const userChoose = useRef<Set<string>>(new Set());
 
   function handleOpenMenu() {
     setShowMenu((showMenu) => !showMenu);
   }
 
-  function handleChooseEmoji(emoji: string) {
+  function handleChooseEmoji(emoji: typeof EMOJIS[number]) {
     const userChosen = userChoose.current.has(emoji);
 
     setOptions((options) => {
@@ -44,8 +48,6 @@ const Reacji: React.FC = () => {
     }
   }
 
-  const emojis = ["👍", "😄", "🎉", "❤️", "🚀", "👀"];
-
   return (
     <div className="container">
       <div className="content">
@@ -63,7 +65,7 @@ const Reacji: React.FC = () => {
             );
           })}
         </ul>
-        <div className="icon">
+        <div className="reactji--buton-menu">
           {showMenu && (
             <div className="menu-container">
               <ul>
@@ -75,7 +77,9 @@ const Reacji: React.FC = () => {
               </ul>
             </div>
           )}
-          <img src={url} width="20" height="20" onClick={handleOpenMenu} />
+          <button className="reacji--button" onClick={handleOpenMenu}>
+            <img src={url} width="20" height="20" />
+          </button>
         </div>
       </div>
     </div>
